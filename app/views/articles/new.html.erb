@@ -1,0 +1,16 @@
+<h1>Create new article</h1>
+
+<% if @article.errors.any? %>
+    <h2>There are errors occured</h2>    
+    
+    <ul>
+        <% @article.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+    </ul>
+    
+<% end %>
+
+<%= render 'form' %>
+
+<%= link_to 'Go to articles page', articles_path  %>
